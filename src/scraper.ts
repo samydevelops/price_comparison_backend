@@ -1,6 +1,6 @@
 import { chromium } from "playwright";
 
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+
 export async function scrapeAmazon(searchTerm: string): Promise<any[]> {
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
@@ -46,7 +46,7 @@ export async function scrapeAmazon(searchTerm: string): Promise<any[]> {
   return products;
 }
 
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+
 export async function scrapeFlipkart(searchTerm: string): Promise<any[]> {
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
