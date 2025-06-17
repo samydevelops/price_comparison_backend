@@ -1,6 +1,6 @@
 import app from './server';
 import { serve } from '@hono/node-server';
 
-serve({ fetch: app.fetch, port: 3000 }, () => {
-  console.log('Server running at http://localhost:3000');
+serve({ fetch: app.fetch, port: 4000 }, () => {
+  console.log('Hono server running at http://localhost:4000');
 });

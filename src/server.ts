@@ -1,7 +1,15 @@
 import { Hono } from "hono";
+import { cors } from 'hono/cors';
 import { scrapeAmazon, scrapeFlipkart } from "./scraper";
 import { z } from "zod";
 const app = new Hono();
+app.use(
+  cors({
+    origin: 'http://localhost:3000', // Next.js default dev server
+    allowMethods: ['GET', 'POST', 'OPTIONS'],
+    allowHeaders: ['Content-Type'],
+  })
+);
 
 app.get("/", (c) => c.text("Amazon Mobile Scraper is running"));
 
